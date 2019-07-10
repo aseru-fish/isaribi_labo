@@ -11,14 +11,12 @@
     <!-- three.min.jsを読み込む -->
     <script src="js/three.min.js" type="text/javascript" charset="utf-8"></script>
     <!-- FBXLoader.jsを読み込む -->
-    <script src="js/loaders/FBXLoader.js" type="text/javascript" charset="utf-8"></script>
-    <script src="js/libs/inflate.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/FBXLoader.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/inflate.min.js" type="text/javascript" charset="utf-8"></script>
+    <!-- MMDLoader.jsを読み込む -->
+    <script src="js/MMDLoader.js" type="text/javascript" charset="utf-8"></script>
     <!--カメラコントローラ-->
-    <script src="js/controls/OrbitControls.js" type="text/javascript" charset="utf-8"></script>
-    
-    <!-- clmtrackr.min.jsを読み込む -->
-    <script src="js/clmtrackr.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="js/model_pca_20_svm.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/OrbitControls.js" type="text/javascript" charset="utf-8"></script>
     
     <!-- main.js -->
     <script src="main.js"></script>
@@ -27,7 +25,9 @@
 <!--body要素 観覧者に見せる内容-->
 <body>
   <center>
-    <p>Hello World!</p>
+    <div id="p_renderer">
+      <canvas id="renderer"></canvas>
+    </div>
   </center>
 </body>
 </html>
