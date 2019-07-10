@@ -24,7 +24,7 @@ function init() {
   });
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(width, height);
-  //document.querySelector('#renderer').appendChild( renderer.domElement );
+  document.querySelector('#p_renderer').appendChild( renderer.domElement );
   //カメラ
   /*camera = new THREE.OrthographicCamera(
       -vWidth/2, vWidth/2, vHeight/2, -vHeight/2,
