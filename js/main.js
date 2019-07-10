@@ -12,6 +12,7 @@ function init() {
 //Three.js
   //シーン
   scene = new THREE.Scene();
+  scene.fog = new THREE.Fog(0xffffff, 0.01,1000);
   //背景色
   scene.background = new THREE.Color(0x888888);
   
@@ -19,7 +20,7 @@ function init() {
   const height = window.innerHeight;
   //レンダラー
   renderer = new THREE.WebGLRenderer({
-    canvas : document.querySelector("#renderer"),
+    canvas : document.querySelector('#renderer'),
     antialias: true 
   });
   renderer.setPixelRatio(window.devicePixelRatio);
@@ -35,7 +36,7 @@ function init() {
     30,
     width / height,
     1,
-    1000
+    2000
   );
   //照明
   light = new THREE.AmbientLight(0xFFFFFF, 1.0);
