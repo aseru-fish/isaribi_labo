@@ -18,10 +18,13 @@ function init() {
   const width = window.innerWidth;
   const height = window.innerHeight;
   //レンダラー
-  renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer = new THREE.WebGLRenderer({
+    canvas : document.querySelector("#renderer"),
+    antialias: true 
+  });
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(width, height);
-  document.querySelector('#renderer').appendChild( renderer.domElement );
+  //document.querySelector('#renderer').appendChild( renderer.domElement );
   //カメラ
   /*camera = new THREE.OrthographicCamera(
       -vWidth/2, vWidth/2, vHeight/2, -vHeight/2,
@@ -34,14 +37,27 @@ function init() {
     1,
     1000
   );
-  //cam.position.set(0, 0, 0);
   //照明
   light = new THREE.AmbientLight(0xFFFFFF, 1.0);
   scene.add(light);
+  //カメラコントローラー
+  const c = document.getElementById('renderer');
+  const controls = new THREE.OrbitControls(camera, c);
+  controls.update();
   
   
   //
-  
+  camera.position.set(0, 10, 10);
+  // ----- 地面 -----
+  var mesh = new THREE.Mesh( new THREE.PlaneBufferGeometry( 2000, 2000 ), new THREE.MeshPhongMaterial( { color: 0xeeeeee, depthWrite: false } ) );
+  mesh.rotation.x = - Math.PI / 2;
+  mesh.receiveShadow = true;
+  scene.add( mesh );
+  //グリッド
+  var grid = new THREE.GridHelper( 100, 20, 0x000000, 0x000000 );
+	grid.material.opacity = 0.2;
+	grid.material.transparent = true;
+	scene.add( grid );
   //
   
   
