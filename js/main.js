@@ -95,7 +95,7 @@ function onDocumentKeyDown(event) {
 
 //更新
 function update() {
-  deltaTime = clock.
+  deltaTime = clock.getDelta();
   requestAnimationFrame(update);
   renderer.render(scene, camera);
 }
