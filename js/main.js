@@ -74,8 +74,8 @@ function init() {
 
 //Windowリサイズ時
 function onWindowResize() {
-  const width = window.innerWidth;
-  const height = window.innerHeight;
+  const width = window.innerWidth-100;
+  const height = window.innerHeight-100;
 
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(width, height);
