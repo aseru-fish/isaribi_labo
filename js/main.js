@@ -1,3 +1,4 @@
+var canvas;
 var clock;
 var deltaTime;
 var renderer;
@@ -16,8 +17,8 @@ function init() {
   //背景色
   scene.background = new THREE.Color(0x888888);
   
-  const width = window.innerWidth;
-  const height = window.innerHeight;
+  const width = window.innerWidth-100;
+  const height = window.innerHeight-100;
   //レンダラー
   renderer = new THREE.WebGLRenderer({
     canvas : document.querySelector('#renderer'),
